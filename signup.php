@@ -1,11 +1,21 @@
 <?php
 	
 	require 'includes/dbh.inc.php';
-	require_once 'header.php';
+	// require_once 'header.php';
 
 ?>
-
-       
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap">
+    <link rel="stylesheet" type="text/css" href="assets/css/SIGNUP.css">
+    <title>REGISTER</title>
+</head>
+<body>
+    <div id="container">       
         <p id="center_heading">Get started today!</p>
         <?php  
         	if (isset($_GET['error'])) {
@@ -30,6 +40,9 @@
         		}
         ?>
         <div class="display">
+            <div class="view">
+                <img src="assets/imgs/image.png" alt="just_an_image">
+            </div>
             <div class="view">
                 <form action="includes/signup.inc.php" method="POST" signup>
                     <input type="text" name="fullname" placeholder="Full name" required>

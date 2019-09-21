@@ -1,15 +1,30 @@
 <?php 
- require_once 'header.php';
+session_start();
+ require 'includes/dbh.inc.php';
 
 ?>
 
-
-	<div class="wrapper">
-
-		<div class="login">
-			<form action="includes/login.inc.php" method="POST">
-				<h1>Welcome back!</h1>
-				<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap">
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+	<title>Login</title>
+</head>
+<body>
+        <h1>Glacier</h1>
+    <div id="container">
+       
+        <p id="center_heading">Login</p>
+        <div class="display">
+            <div class="view">
+                <img src="https://res.cloudinary.com/jammie/image/upload/v1569006201/image_gx27eg.png" alt="just_an_image">
+            </div>
+            <div class="view">
+			<form action="includes/login.inc.php" method="POST" signup>
 				        <?php  
 			        	if (isset($_GET['error'])) {
 			        		if ($_GET['error'] == "wrongPwd") {
@@ -31,37 +46,14 @@
 
 			        			echo "<p>login Successful</p>";
 			        		}
-        ?>
-				<div class="input-field">
-					<i class="mdi-social-person-outline prefix float-right"></i>
-					<input class="" required name="useremail" id="useremail" type="text" placeholder="Enter your email or username..">
-					<label for="useremail" data-error="wrong" data-success="right" class="center-align"></label>
-				</div>
+       					 ?>
+                    <input type="text" name="useremail" id="useremail" placeholder="Username">
+                    <input type="password" name="userpwd" id="password" placeholder="Password">
+                    <input type="submit"  name="login-submit" value="Login">
 
-				<div class="input-field">
-					<i class="mdi-action-lock-outline prefix float-right"></i>
-					<input id="password" name="userpwd" type="password" placeholder="password">
-					<label for="password"></label>
-				</div><br>
-
-				<a href="#" id="forgot">Forgot password?</a>
-
-				<div class="input-field">
-					<input type="checkbox" id="remember-me" />
-					<label for="remember-me">Remember me</label>
-				</div>
-
-				<div class="input-field">
-					<button class="btn waves-effect waves-light" type="submit" name="login-submit">Login</button>
-				</div>
-
-				<p class="reg">
-					Don't have an account?
-					<a href="signup.php" id="register">Sign up!</a><br><br>
-				</p>
-
-				<br>
-				<br>
+                <div footer>
+                    <p>Don't have an account? <a href="signup.php">Create An Account</a> </p>
+                </div>
 			</form>
 		</div>
 

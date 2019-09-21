@@ -19,10 +19,6 @@
 	<title>GLACIER</title>
 </head>
 <body>
-        <h1>Glacier</h1>
-            <div class="wrapper">
-                
-             <div class="image">
-                <img src="assets/imgs/image.png" alt="just_an_image">
-            </div>
+
+
 

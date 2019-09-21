@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 	//if username is already taken
 	else{
 
-		$sql = "SELECT username FROM users WHERE username=?";
+		$sql = "SELECT username FROM `users` WHERE username=?";
 		$stmt = mysqli_stmt_init($conn);
 
 		if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
 				exit();
 			}
 			else{
-				$sql = "INSERT INTO users (fullname, username, email, password) VALUES (?, ?, ?, ?)";
+				$sql = "INSERT INTO `users`(`fullname`, `username`, `email`, `password`) VALUES (?, ?, ?, ?)";
 
 				$stmt = mysqli_stmt_init($conn);
 				if (!mysqli_stmt_prepare($stmt, $sql)) {
